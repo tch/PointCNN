@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 '''Download datasets for this project.'''
 
 from __future__ import absolute_import
