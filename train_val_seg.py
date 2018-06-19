@@ -88,7 +88,7 @@ def main():
     indices = tf.placeholder(tf.int32, shape=(None, None, 2), name="indices")
     xforms = tf.placeholder(tf.float32, shape=(None, 3, 3), name="xforms")
     rotations = tf.placeholder(tf.float32, shape=(None, 3, 3), name="rotations")
-    jitter_range = tf.placeholder(tf.float32, shape=(1), name="jitter_range")
+    jitter_range = tf.placeholder(tf.float32, shape=(), name="jitter_range")
     global_step = tf.Variable(0, trainable=False, name='global_step')
     is_training = tf.placeholder(tf.bool, name='is_training')
 
@@ -223,7 +223,7 @@ def main():
                                  indices: pf.get_indices(batch_size_val, sample_num, points_num_batch),
                                  xforms: xforms_np,
                                  rotations: rotations_np,
-                                 jitter_range: np.array([jitter_val]),
+                                 jitter_range: jitter_val, #np.array([jitter_val]),
                                  labels_seg: labels_batch,
                                  labels_weights: weights_batch,
                                  is_training: False,
@@ -273,7 +273,7 @@ def main():
                          indices: pf.get_indices(batch_size_train, sample_num_train, points_num_batch),
                          xforms: xforms_np,
                          rotations: rotations_np,
-                         jitter_range: np.array([jitter]),
+                         jitter_range: jitter, #np.array([jitter]),
                          labels_seg: labels_batch,
                          labels_weights: weights_batch,
                          is_training: True,
