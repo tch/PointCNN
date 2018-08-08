@@ -81,7 +81,7 @@ def main():
     batch_num = (num_train * num_epochs + batch_size - 1) // batch_size
     print('{}-{:d} training batches.'.format(datetime.now(), batch_num))
     batch_num_val = math.ceil(num_val / batch_size)
-    print('{}-{:d} testing batches per test.'.format(datetime.now(), batch_num_val))
+    print('{}-{:d} validation batches per test.'.format(datetime.now(), batch_num_val))
 
     ######################################################################
     # Placeholders

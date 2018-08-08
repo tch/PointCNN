@@ -1,5 +1,10 @@
 #/bin/bash
-PYTHON=python
+PYTHON=python3
+
+#patch cuda
+#https://ask.fedoraproject.org/en/question/114489/cuda-9-nvcc-issue/
+#or glibc
+#https://devtalk.nvidia.com/default/topic/1023776/-request-add-nvcc-compatibility-with-glibc-2-26/
 
 CUDA_PATH=/usr/local/cuda
 TF_LIB=$($PYTHON -c 'import tensorflow as tf; print(tf.sysconfig.get_lib())')

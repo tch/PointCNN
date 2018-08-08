@@ -2,9 +2,10 @@
 
 gpu=
 setting=
-models_folder="../../models/trackml/"
-train_files="../../data/shapenet_partseg/train_files.txt"
-val_files="../../data/shapenet_partseg/val_files.txt"
+models_folder="../../models/seg/"
+train_files="/home/tch/roaming/project/trackml/repo/kaggle_trackml/data/train_files.txt"
+val_files="/home/tch/roaming/project/trackml/repo/kaggle_trackml/data/val_files.txt"
+
 
 usage() { echo "train/val pointcnn_seg with -g gpu_id -x setting options"; }
 
@@ -46,4 +47,4 @@ fi
 
 
 echo "Train/Val with setting $setting on GPU $gpu!"
-CUDA_VISIBLE_DEVICES=$gpu python3 ../train_val_seg.py -t $train_files -v $val_files -s $models_folder -m pointcnn_seg -x $setting > $models_folder/trackml_seg_$setting.txt 2>&1 &
+CUDA_VISIBLE_DEVICES=$gpu python3 ../train_val_seg.py -t $train_files -v $val_files -s $models_folder -m pointcnn_seg -x $setting > $models_folder/pointcnn_seg_$setting.txt 2>&1 &
