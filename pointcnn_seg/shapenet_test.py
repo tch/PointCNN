@@ -2,7 +2,7 @@
 
 num_class = 50
 
-sample_num = 3000
+sample_num = 2048
 
 batch_size = 8
 
